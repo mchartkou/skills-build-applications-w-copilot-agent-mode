@@ -19,6 +19,7 @@ from rest_framework.routers import DefaultRouter
 from .views import UserViewSet, TeamViewSet, ActivityViewSet, LeaderboardViewSet, WorkoutViewSet, api_root
 import os
 
+
 codespace_name = os.environ.get('CODESPACE_NAME')
 if codespace_name:
     base_url = f"https://{codespace_name}-8000.app.github.dev"

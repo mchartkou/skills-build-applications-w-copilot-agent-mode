@@ -1,9 +1,10 @@
 from djongo import models
 from django.contrib.auth.models import AbstractUser
+from django.contrib.auth import get_user_model
 
 class Team(models.Model):
     name = models.CharField(max_length=100, unique=True)
-    members = models.ArrayField(model_container='User', null=True, blank=True)
+    members = models.ManyToManyField('User', blank=True, related_name='teams')
     def __str__(self):
         return self.name
 
